@@ -1,0 +1,27 @@
+<div class="classroom_list">
+  <div class="container">
+    <div class="classroom_row" *ngFor="let program of programs">
+      <div class="row align-items-center d-flex">
+        <div class="col-md-4">
+          <img [src]="program.imageURL">
+        </div>
+        <div class="col-md-5">
+          <div class="pad_l10">
+            <h3>{{ program['title'] }}</h3>
+            <p>{{ program['description'] }}</p>
+            <!-- <div class="rating"><span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span></div>
+          </div> -->
+
+        </div>
+      </div>
+      <div class="col-md-3 ">
+        <a class="continuebtn" (click)="goTo(program)">
+          {{program['status'] == 'started' ? 'Continue' : (program['status'] == 'assigned') ? 'Get Started' : (program['status'] == 'suspended') ? 'Suspended' : 'Coming Soon' }} <span class="arrow arrow-bar is-right"></span> </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.classroom_btn a{ background: #FFCA1A; color: #5D5555; font-weight: 500;}
+.classroom_btn a:hover{ background: #00a5cd;}
+.dropdown-toggle::after { 
+    content: none;
+}
+.dropdown-menu.show{
+    left: -35px !important;
+}
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #FFCA1A;
+    color: #fff;
+    border: none;
+}
+.classroom_btn a:hover {
+    color: #fff !important;
+    background-color: #000;
+}
+.signOut{
+    font-size: 18px;
+}
+.signOut:before{
+    margin-right: 3px;
+}
+.notification:before{
+    font-size: 30px;
+    color: #b9981f;
+    padding-left: 23px;
+    padding-right: 10px;
+    cursor: pointer;
+}

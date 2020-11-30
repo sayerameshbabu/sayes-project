@@ -1,0 +1,87 @@
+// .edit-img img{
+//     height: 60px;    
+// }
+.edit-profile{
+    mat-label {
+      color: #797979;
+      font-size: 16px;
+    }
+    mat-form-field {
+      width: 100%;
+      .mat-form-field-ripple {
+        background-color: #797979;
+      }
+    }
+}
+.mat-form-field-appearance-fill .mat-form-field-infix {
+  padding: .25em 0 .50em 0;
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex{
+    border-bottom: 1px solid #fff;
+}
+.rb-button {
+    display: flex;
+    justify-content: center;
+    .register-button {
+      margin-top: 25px;
+      padding: 10px 35px;
+      background: #E8BD1F 0% 0% no-repeat padding-box;
+      border: none;
+      opacity: 1;
+      box-shadow: none;
+      font-family: 'Poppins', sans-serif;
+      outline: none;
+      color: #fff;
+      cursor: pointer;
+      
+    }
+  }
+ 
+  /* profile picture css */
+  img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+  }
+  .hoverable{
+    position: relative;
+    display: block;
+    cursor: pointer;
+    height: 130px;
+    width: 130px;
+    // border:2px solid #000;
+    border-radius: 50%;
+  }
+  .hoverable .hover-text{
+    position: absolute;
+    display: none;
+    top: 50%;
+    left:  50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%, -45%);  
+    z-index: 2;
+  }
+  .hoverable .background{
+    position: absolute;
+    display: none;
+    top: 0;
+    left:  0;
+    bottom: 0;
+    right: 0;
+    background-color:rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .hoverable:hover .hover-text{
+    display: block;
+    font-family: Poppins,sans-serif;
+  }
+  .hoverable:hover .background{
+    display: block;
+  }
+  
+  #fileInput{
+    display: none;
+  }

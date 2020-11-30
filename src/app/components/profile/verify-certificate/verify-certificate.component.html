@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="col_box">
+        <h4 class="reset_hed">Verify certificate</h4>
+        <form class="resetform" [formGroup]="vcForm">
+            <div style="min-height: 130px;">
+                <textarea class="form_col" style="margin: 0px;" placeholder="Enter Certificate Id" formControlName="id"></textarea>
+                <p class="text-danger error-text"
+                        *ngIf="vcForm.get('id').touched && vcForm.get('id').hasError('required')">
+                        Certificate Id is required</p>
+            </div>
+            <div style="min-height: 128px;">
+                <label style="color: #000;">Certificate </label>
+                <input type="file" class="form_col" (change)="getFile($event)" accept=".pdf" formControlName="file">
+                <p class="text-danger error-text"
+                        *ngIf="vcForm.get('file').touched && vcForm.get('file').hasError('required')">
+                        Certificate is required</p>
+            </div>
+            <div class="text-center"> <button class="btn" type="submit" (click)="verifyCertificate()" [disabled]="vcForm.invalid">Verify</button></div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+<div class="programssub bannerone" style="background: #ffd634;">
+  <div class="container">
+    <h1>
+      <span>{{programInfo.title}}</span>
+    </h1>
+    <p class="text-justify">{{programInfo.mainDescription}}</p>
+    <div class="button14" style="margin-top: 40px;">
+      <a class="btn" (click)="enrollNow()">Enroll Now</a>
+    </div>
+  </div>
+</div>
+<!-- <dl-our-partners></dl-our-partners> -->
+<div class="keyfeatures">
+  <div class="container">
+    <h2>Key Features</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <ul *ngIf="programInfo.features">
+          <li *ngFor="let value of programInfo.features.slice(0, (programInfo.features.length/2) + 1)">{{value}}</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul *ngIf="programInfo.features">
+          <li
+            *ngFor="let value of programInfo.features.slice((programInfo.features.length/2) + 1, programInfo.features.length)">
+            {{value}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="coursecol">
+  <div class="container">
+    <h3>Course Curriculum</h3>
+    <div class="cource-mid">
+      <div class="accordion" id="accordion1">
+        <div class="panel panel-default card wow fadeInUp animated"
+          *ngFor="let topic of programInfo['curriculum']; let i=index">
+          <div class="panel-heading card-header" id="headingOne" (click)="topic['expanded'] = !topic['expanded']">
+            <a class="btn collapsed">
+              <span class="number-count">{{i+1}}</span> {{topic.title}}
+              <span class="plus-minus">
+                <i class="fa fa-plus fa-angle-down" *ngIf="!topic['expanded']"></i>
+                <i class="fa fa-minus fa-angle-up" *ngIf="topic['expanded']"></i>
+              </span>
+            </a>
+          </div>
+          <ng-container *ngIf="topic['expanded']">
+            <div id="collapseOne" class="panel-collapse collapse" *ngFor="let subTopic of topic.topics">
+              <div class="card-body">
+                <p>{{subTopic.title}}</p>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div style="display: flex;justify-content: center;margin-top: 40px;">
+        <a (click)="downloadCurriculum(programInfo)">
+          <div class="download-btn">
+            <span class="download-icon">
+              <img src="assets/images/curriculum_dwnld_icon.png" alt="Download" class="hvr-icon" /> </span>
+            <span class="download-text">
+              <strong>Download</strong>
+              <em>Brochure</em>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="toolscovered">
+      <h4>TOOLS COVERED</h4>
+      <div class="row">
+        <div class="col-md-12">
+          <img src="assets/images/linux.png" alt="Tools Covered">
+          <img src="assets/images/slack.png" alt="Tools Covered">
+          <img src="assets/images/pandas.png" alt="Tools Covered">
+          <img src="assets/images/aws.png" alt="Tools Covered">
+          <img src="assets/images/trello.png" alt="Tools Covered">
+          <img src="assets/images/github.png" alt="Tools Covered">
+          <img src="assets/images/jupiter.png" alt="Tools Covered">
+          <img src="assets/images/django.png" alt="Tools Covered">
+          <img src="assets/images/flask.png" alt="Tools Covered">
+          <img src="assets/images/pythontool.png" alt="Tools Covered">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="certification">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 d-flex align-items-center">
+        <div>
+          <h3>Certification</h3>
+          <p>Our training is based on latest cutting-edge infrastructure technology which makes you ready for the
+            industry. Digital-Lync will Present this certificate to students or employee trainees upon successful
+            completion of the course which will encourage and add to trainee’s resume to explore a lot of opportunities
+            beyond position</p>
+          <div class="button14">
+            <a class="btn wow fadeInUp animated" (click)="enrollNow()">Get Certified</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <a><img src="assets/images/certificateim.jpg" alt="Certification"></a>
+      </div>
+    </div>
+  </div>
+</div>
+<dl-hiring-partners></dl-hiring-partners>
+<!-- <dl-feedback></dl-feedback> -->
+<dl-faq [faq]="programInfo ? programInfo['faqs'] : []"></dl-faq>
+<dl-kick-start></dl-kick-start>

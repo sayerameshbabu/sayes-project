@@ -1,0 +1,32 @@
+<div class="welcomebanner">
+    <div class="container">
+        <h1>Welcome {{ username }} <br>Digital Lync Academy</h1>
+
+    </div>
+</div>
+<div class="browse_col">
+    <div class="container">
+        <h2>browse programs</h2>
+        <div class="row pad_t30 courceminh">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" *ngFor="let program of associateDegreeProgram">
+                <div class="pro-card">
+                    <div class="pro-card-img"><a (click)="redirectToProgramInfo(program)">
+                        <img [src]="program.imageURL" [alt]="program.title"></a></div>
+                    <div class="related-card-cnt cource_count"> <a (click)="redirectToProgramInfo(program)">
+                            <h4>{{program.title}}</h4>
+                            <p class="text-justify">{{program.mainDescription}} </p>
+                        </a>
+                        <ul>
+                            <li class="hvr-icon-up"><a (click)="downloadCurriculum(program)"> <img
+                                        src="assets/images/pdf-download.png" alt="Curriculum" class="hvr-icon">
+                                    <span>Curriculum</span> </a></li>
+                            <li class="hvr-icon-up"><a (click)="enrollNow(program)"> <img
+                                        src="assets/images/enroll_here.png" alt="Enroll Now" class="hvr-icon">
+                                    <span>Enroll Now</span> </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
