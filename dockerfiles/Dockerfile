@@ -1,4 +1,4 @@
 FROM nginx
 MAINTAINER Ramesh
-COPY ../public/* /usr/share/nginx/html/
+COPY /home/dockeradmin/nodejs/public/* /usr/share/nginx/html/
 EXPOSE 80
