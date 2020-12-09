@@ -1,0 +1,27 @@
+---
+- name: cloning and building in docker host
+  hosts: docker
+  become: yes
+  tasks:
+        - name: install git
+          yum:
+                name: git
+                state: installed
+        - name: install docker
+          yum:
+                name: docker
+                state: installed
+        - name: enable docker
+          service:
+                name: docker
+                enabled: yes
+        - name: add dockeradmin user
+          shell: "groupadd docker &&  usermod -aG docker dockeradmin"
+          notify:
+                - Reboot system
+          ignore_errors: yes
+  handlers:
+        - name: Reboot system
+          shell: "reboot"
+...
+

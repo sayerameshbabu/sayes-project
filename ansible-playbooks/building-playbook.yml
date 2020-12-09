@@ -1,0 +1,14 @@
+---
+- name: building nodejs application
+  hosts: docker
+  tasks:
+        - name: cloning repository
+          git:
+                repo: https://github.com/sayerameshbabu/sayes-project.git
+                dest: /home/dockeradmin/nodejs/
+        - name: install dependencies 
+          shell: "cd nodejs && npm install"
+        - name: build and execute
+          shell: "cd nodejs && npm run build"
+...
+
