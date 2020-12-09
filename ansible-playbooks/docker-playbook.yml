@@ -3,7 +3,7 @@
   hosts: docker 
   tasks:
         - name: docker build
-          shell: " docker build -t sayerameshbabu/dllms nodejs"
+          shell: " docker build -t sayerameshbabu/dllms nodejs/dockerfiles"
         - name: deleting container if exists
           shell: "docker stop lmscontainer"
           ignore_errors: yes
